@@ -6,29 +6,28 @@ namespace AddressBook_Collections
 {
     class AddressBookBinder
     {
-            //creating a dictionary by passing string and list as arguements
-            public Dictionary<string, List<Contact>> Binder = new Dictionary<string, List<Contact>>();
+        //creating dictionary to store contacts passing hashset as an arguement
+        public Dictionary<string, HashSet<Contact>> Binder = new Dictionary<string, HashSet<Contact>>();
 
-            /// <summary>
-            /// Adds the addr book.
-            /// </summary>
-            /// <param name="key">The key.</param>
-            /// <param name="list">The list.</param>
-            /// <returns></returns>
-            public List<Contact> AddAddrBook(string key, List<Contact> list)
+        /// <summary>
+        /// Adds the addr book.
+        /// </summary>
+        /// <param name="key">The key.</param>
+        /// <param name="set">The set.</param>
+        /// <returns></returns>
+        public HashSet<Contact> AddAddrBook(string key, HashSet<Contact> set)
+        {
+            if (this.Binder.ContainsKey(key))
             {
-                //checks whether key is present in binder class
-                if (this.Binder.ContainsKey(key))
-                {
-                    Console.WriteLine("Address book already exists");
-                    return Binder[key];
-                }
-                else
-                {
-                    Console.WriteLine("New address book created");
-                    Binder.Add(key, list);
-                    return Binder[key];
-                }
+                Console.WriteLine("Address book already exists");
+                return Binder[key];
+            }
+            else
+            {
+                Console.WriteLine("New address book created");
+                Binder.Add(key, set);
+                return Binder[key];
             }
         }
     }
+}

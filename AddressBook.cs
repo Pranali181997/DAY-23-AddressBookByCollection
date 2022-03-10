@@ -6,16 +6,15 @@ namespace AddressBook_Collections
 {
     class AddressBook
     {
-   
-        //creates a list
-        public List<Contact> People;
+        //creating an hashset to store contacts
+        public HashSet<Contact> People;
 
         /// <summary>
         /// Initializes a new instance of the <see cref="AddressBook"/> class.
         /// </summary>
         public AddressBook()
         {
-            People = new List<Contact>();
+            People = new HashSet<Contact>();
         }
 
         /// <summary>
@@ -25,8 +24,16 @@ namespace AddressBook_Collections
         /// <returns></returns>
         public Contact FindContact(string fname)
         {
-            //finding the person's contact by first name
-            Contact contact = People.Find((person) => person.FirstName == fname);
+            Contact contact = null;
+            //traversing
+            foreach (var person in People)
+            {
+                if (person.FirstName.Equals(fname))
+                {
+                    contact = person;
+                    break;
+                }
+            }
             return contact;
         }
 
