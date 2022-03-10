@@ -6,8 +6,12 @@ namespace AddressBook_Collections
 {
     class AddressBookBinder
     {
-        //creating dictionary to store contacts passing hashset as an arguement
+        //creates a dictionary to store binder class details
         public Dictionary<string, HashSet<Contact>> Binder = new Dictionary<string, HashSet<Contact>>();
+        //creates a list 
+        public List<Contact> City = new List<Contact>();
+        //create a dictionary to store details of city
+        public Dictionary<string, List<Contact>> CityDictionary = new Dictionary<string, List<Contact>>();
 
         /// <summary>
         /// Adds the addr book.
@@ -28,6 +32,37 @@ namespace AddressBook_Collections
                 Binder.Add(key, set);
                 return Binder[key];
             }
+        }
+
+        /// <summary>
+        /// Sorts the city.
+        /// </summary>
+        /// <param name="cityname">The cityname.</param>
+        /// <returns></returns>
+        public List<Contact> SortByCity(string cityname)
+        {
+            //traversing in binder class
+            foreach (var key in Binder.Keys)
+            {
+                //traversing for a contact by creating an object c 
+                foreach (Contact c in Binder[key])
+                {
+                    if (c.City == cityname)
+                        City.Add(c);
+                }
+            }
+            return City;
+        }
+
+        /// <summary>
+        /// Searches the contacts by city.
+        /// </summary>
+        /// <param name="city">The city.</param>
+        /// <returns></returns>
+        public List<Contact> SearchContactsByCity(string city)
+        {
+            CityDictionary[city] = SortByCity(city);
+            return CityDictionary[city];
         }
     }
 }
