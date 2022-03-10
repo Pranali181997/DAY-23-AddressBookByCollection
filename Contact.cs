@@ -1,93 +1,98 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 namespace AddressBook_Collections
 {
-        internal class Contact
-        {
+    class Contact
+    {
+        /// <summary>
+        /// Gets or sets the first name.
+        /// </summary>
+        /// <value>
+        /// The first name.
+        /// </value>
+    public string FirstName { get; set; }
 
-            //list is created to store contact info
-            List<Contact> contacts = new List<Contact>();
+    /// <summary>
+    /// Gets or sets the last name.
+    /// </summary>
+    /// <value>
+    /// The last name.
+    /// </value>
+    public string LastName { get; set; }
 
-            //variables
-            public string first_name;
-            public string last_name;
-            public string address;
-            public string city;
-            public string state;
-            public int zip;
-            public long phone;
-            public string email;
+    /// <summary>
+    /// Gets or sets the address.
+    /// </summary>
+    /// <value>
+    /// The address.
+    /// </value>
+    public string Address { get; set; }
 
-            /// <summary>
-            /// Initializes a new instance of the <see cref="Contacts"/> class.
-            /// </summary>
-            public Contact()
-            {
+    /// <summary>
+    /// Gets or sets the city.
+    /// </summary>
+    /// <value>
+    /// The city.
+    /// </value>
+    public string City { get; set; }
 
-            }
+    /// <summary>
+    /// Gets or sets the state.
+    /// </summary>
+    /// <value>
+    /// The state.
+    /// </value>
+    public string State { get; set; }
 
-            /// <summary>
-            /// Initializes a new instance of the <see cref="Contacts"/> class.
-            /// </summary>
-            /// <param name="first_name">The first name.</param>
-            /// <param name="last_name">The last name.</param>
-            /// <param name="address">The address.</param>
-            /// <param name="city">The city.</param>
-            /// <param name="state">The state.</param>
-            /// <param name="zip">The zip.</param>
-            /// <param name="phone">The phone.</param>
-            /// <param name="email">The email.</param>
-            public Contact(string first_name, string last_name, string address, string city, string state, int zip, long phone, string email)
-            {
-                this.first_name = first_name;
-                this.last_name = last_name;
-                this.address = address;
-                this.city = city;
-                this.state = state;
-                this.zip = zip;
-                this.phone = phone;
-                this.email = email;
-            }
+    /// <summary>
+    /// Gets or sets the zip code.
+    /// </summary>
+    /// <value>
+    /// The zip code.
+    /// </value>
+    public string ZipCode { get; set; }
 
-            /// <summary>
-            /// Sets the contacts.
-            /// </summary>
-            /// <param name="contacts">The contacts.</param>
-            public void setContacts(List<Contact> contacts)
-            {
-                this.contacts = contacts;
-            }
+    /// <summary>
+    /// Gets or sets the phone number.
+    /// </summary>
+    /// <value>
+    /// The phone number.
+    /// </value>
+    public string PhoneNumber { get; set; }
 
-            /// <summary>
-            /// Gets the contacts.
-            /// </summary>
-            /// <returns></returns>
-            public List<Contact> getContacts()
-            {
-                return contacts;
-            }
+    /// <summary>
+    /// Gets or sets the email.
+    /// </summary>
+    /// <value>
+    /// The email.
+    /// </value>
+    public string Email { get; set; }
 
-            /// <summary>
-            /// Shows the contacts.
-            /// </summary>
-            /// <returns></returns>
-            public List<Contact> showContacts()
-            {
-                return contacts;
-            }
-
-            /// <summary>
-            /// Converts to string.
-            /// </summary>
-            /// <returns>
-            /// A <see cref="System.String" /> that represents this instance.
-            /// </returns>
-            public override string ToString()
-            {
-                return "First Name: " + first_name + " \n" + "Last Name: " + last_name + " \n" + "Address: " + address + " \n" + "City: " + city + " \n" + "State: " + state + " \n" + "Zip: " + zip + " \n" + "Phone Number: " + phone + " \n" + "Email-id: " + email;
-            }
-
-        }
+    /// <summary>
+    /// Initializes a new instance of the <see cref="Contact"/> class.
+    /// </summary>
+    /// <param name="FirstName">The first name.</param>
+    /// <param name="LastName">The last name.</param>
+    /// <param name="Address">The address.</param>
+    /// <param name="City">The city.</param>
+    /// <param name="State">The state.</param>
+    /// <param name="ZipCode">The zip code.</param>
+    /// <param name="PhoneNumber">The phone number.</param>
+    /// <param name="Email">The email.</param>
+    public Contact(string FirstName, string LastName, string Address, string City, string State, string ZipCode, string PhoneNumber, string Email)
+    {
+        this.FirstName = FirstName;
+        this.LastName = LastName;
+        this.Address = Address;
+        this.City = City;
+        this.State = State;
+        this.ZipCode = ZipCode;
+        this.PhoneNumber = PhoneNumber;
+        this.Email = Email;
     }
+}
+}
