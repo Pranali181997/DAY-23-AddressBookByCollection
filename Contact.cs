@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AddressBook_Collections
 {
-   class Contact
+    class Contact
     {
         /// <summary>
         /// Gets or sets the first name.
