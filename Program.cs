@@ -14,19 +14,17 @@ namespace AddressBook_Collections
             //reference for binder class
             AddressBookBinder binder = new AddressBookBinder();
             //welcome message
-            Console.WriteLine("Hello, Welcome to Address Book");
             int result = 1;
             while (result == 1)
             {
                 Console.WriteLine("Enter the name of the Address Book to be used");
                 string addrName = Console.ReadLine();
-                //reference for address book class
                 AddressBook book = new AddressBook();
                 book.People = binder.AddAddrBook(addrName, book.People);
                 int loop = 1;
                 while (loop == 1)
                 {
-                    Console.WriteLine("\nSelect the option. \n1. Add new contact. \n2. Edit existing contact.\n3. Delete Contact \n4. Search By City \n5. Exit.");
+                    Console.WriteLine("\nSelect the option. \n1. Add new contact. \n2. Edit existing contact.\n3. Delete Contact \n4. Exit.");
                     int option = int.Parse(Console.ReadLine());
                     switch (option)
                     {
@@ -100,14 +98,6 @@ namespace AddressBook_Collections
                                 break;
                             }
                         case 4:
-                            Console.WriteLine("Enter city whose contacts need to be searched");
-                            string city = Console.ReadLine();
-                            foreach (Contact contact in binder.SearchContactsByCity(city))
-                            {
-                                Console.WriteLine(contact.FirstName + "\t" + contact.LastName + "\t" + contact.Address + "\t" + contact.City + "\t" + contact.State + "\t" + contact.ZipCode + "\t" + contact.PhoneNumber + "\t" + contact.Email);
-                            }
-                            break;
-                        case 5:
                             loop = 0;
                             break;
                     }

@@ -35,7 +35,7 @@ namespace AddressBook_Collections
         }
 
         /// <summary>
-        /// Sorts the city.
+        /// Sorts the by city.
         /// </summary>
         /// <param name="cityname">The cityname.</param>
         /// <returns></returns>
