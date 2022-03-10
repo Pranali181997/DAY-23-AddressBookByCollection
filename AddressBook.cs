@@ -2,8 +2,8 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace AddressBook_Collections
-{
+namespace AddressBook_Collections 
+{ 
     class AddressBook
     {
         //creation of list
@@ -56,6 +56,29 @@ namespace AddressBook_Collections
             }
             else
                 return false;
+        }
+
+        /// <summary>
+        /// Removes the contact.
+        /// </summary>
+        /// <param name="name">The name.</param>
+        /// <returns></returns>
+        public bool RemoveContact(string name)
+        {
+            //creation of object for contact
+            Contact c = FindContact(name);
+            //checks in c for the contact
+            //if it is true then contact will be removed
+            //otherwise returns false
+            if (c != null)
+            {
+                People.Remove(c);
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }
